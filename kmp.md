@@ -87,3 +87,41 @@
 			}
 		}		
 		```
+	* 459 Repeated Substring
+		```
+		public class Solution {
+			public boolean repeatedSubstringPattern(String s) {
+				if (s.isEmpty()) return false;
+				int[] kmp = this.buildKMP(s);
+				int n = s.length();
+
+				int prefixLength = kmp[n - 1];
+				int repeatLength = n - prefixLength;
+
+				return prefixLength > 0 && n % repeatLength == 0;
+			}
+
+			private int[] buildKMP(String s) {
+				int n = s.length();
+				int[] kmp = new int[n];
+				int j = 0;
+				for (int i = 1; i < n; i++) {
+					while (j > 0 && s.charAt(i) != s.charAt(j)) j = kmp[j - 1];
+					if (s.charAt(i) == s.charAt(j)) j++;
+					kmp[i] = j;
+				}
+
+				return kmp;
+			}
+		}
+		```
+		
+	* Shortest Palindrome
+	
+	* Repeated String Match
+	
+	* Minimum Window Substring
+	
+	* Wildcard Matching
+	
+	* Add Bold Tag in String
