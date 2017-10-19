@@ -54,7 +54,8 @@
 			```
 		* 解答:
 		
-			```
+			1. 解法1：DP 复杂度O(n^2)
+				```
 				class Solution {
 				    public int lengthOfLIS(int[] nums) {
 					if (nums.length < 2) return nums.length;
@@ -76,4 +77,33 @@
 					return max;
 				    }
 				}
+				```
+			2. 解法2: DP
 			```
+			public class Solution {
+			    public int lengthOfLIS(int[] nums) {
+				int[] dp = new int[nums.length];
+				int length = 0;
+
+				for (int num : nums) {
+				    //在dp的范围内去找到当前num应该插入的位置
+				    int index = Arrays.binarySearch(dp, 0, length, num);
+
+				    //当找不到时， binarysearch返回的是 - insert place - 1， 返回的依然是num应该插入的位置
+				    if (index < 0) {
+					index = - (index + 1);
+				    }
+
+				    //由于限制了bs的范围， 所以index最高也就是当前length + 1的位置。
+				    //如果index != length, 直接更新现有dp中的某个值，否则扩展dp的实际长度
+				    dp[index] = num;
+				    if (index == length) {
+					length++;
+				    }
+				}
+
+				return length;
+			    }
+			}
+		```
+			
