@@ -106,5 +106,15 @@
 			    }
 			}
 		```
-	* [416 Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/description/)
+7. **LC例题分类**
+	1. [416 Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/description/)
+	2. Subarray
+		* [53 Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/)
+		* [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/description/)
+	3. 爬梯子型
+		* 求优化解，状态转移方程好确认
+		* [70 Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/)
+		
+	4. triangle
+		* [120. Triangle](https://leetcode.com/problems/triangle/description/)
 			
