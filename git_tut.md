@@ -54,5 +54,6 @@
 19. 最佳实践：master分支应该是非常稳定的，仅仅用来发布新版本，平时不能在上面干活
 20. 确定哪个分支上修复bug,然后从该分支创建临时分支
 21. 从远程仓库克隆时，git自动把本地的master分支和远程的master分支对应起来，远程仓库默认名称是```origin```.
-22. ```pull```=```fetch```+```merge```.
+21. ```fetch```是更新你的remote tracking branch. 
+22. ```pull```=```fetch```+```merge```.bring a local branch up-to-date with its remote version, while also updating your other remote-tracking branches
 
